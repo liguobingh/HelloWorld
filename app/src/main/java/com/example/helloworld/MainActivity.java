@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
     private ProportionBar proportionBar;
@@ -11,9 +12,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        proportionBar = new ProportionBar(getBaseContext());
-        double scale[] = new double[] {0.1, 0.2, 0.3};
+        proportionBar = findViewById(R.id.percent);
+        double scale[] = new double[] {0, 0, 1};
+        Log.d("@@@@@", "scale: " + scale);
         proportionBar.setScales(scale);
-
     }
 }
