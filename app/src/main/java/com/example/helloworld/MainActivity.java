@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         proportionBar = findViewById(R.id.percent);
-        double scale[] = new double[] {0, 0, 1};
+        double scale[] = new double[] {0.5, 0.001, 0};
         Log.d("@@@@@", "scale: " + scale);
         proportionBar.setScales(scale);
     }

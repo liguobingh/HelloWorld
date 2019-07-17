@@ -13,7 +13,6 @@ import android.util.Log;
 import android.view.View;
 
 
-
 public class ProportionBar extends View {
 
     private Context mContext;
@@ -62,19 +61,19 @@ public class ProportionBar extends View {
 
         for (int i = 0; i <= percent.length; i++) {
             // 存储占比为1的情况（空余部分也作为一种存储内容）
-            if (percent[0] == 0.0 && percent[1] == 0 && percent[2] == 0) {
+            if ((1 - percent[0] - percent[1] - percent[2]) >= 0.99) {
                 mPaint.setColor(mColors[3]);
                 canvas.drawRoundRect(0, 0, mWidth, mHeight, 15, 15, mPaint);
                 break;
-            } else if (percent[0] == 1) {
+            } else if (percent[0] >= 0.99) {
                 mPaint.setColor(mColors[0]);
                 canvas.drawRoundRect(0, 0, mWidth, mHeight, 15, 15, mPaint);
                 break;
-            } else if (percent[1] == 1) {
+            } else if (percent[1] >= 0.99) {
                 mPaint.setColor(mColors[1]);
                 canvas.drawRoundRect(0, 0, mWidth, mHeight, 15, 15, mPaint);
                 break;
-            } else if (percent[2] == 1) {
+            } else if (percent[2] >= 0.99) {
                 mPaint.setColor(mColors[2]);
                 canvas.drawRoundRect(0, 0, mWidth, mHeight, 15, 15, mPaint);
                 break;
